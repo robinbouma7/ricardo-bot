@@ -72,6 +72,7 @@ bot.on('message', msg => {
 					.setDescription(
 						'`ric help commands`\nvoor epic commands\n\n`ric help nsfw`\nvoor de geilste commands'
 					)
+					.setFooter('ricardo is epic chad')
 					.setThumbnail(
 						'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
 					)
@@ -86,6 +87,7 @@ bot.on('message', msg => {
 				.setDescription(
 					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry boy`\nping onze favoriete furry'
 				)
+				.setFooter('ricardo is epic chad')
 				.setThumbnail(
 					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
 				)
@@ -99,6 +101,7 @@ bot.on('message', msg => {
 				.setDescription(
 					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric kill me`\nricardo regelt het wel'
 				)
+				.setFooter('ricardo is epic chad')
 				.setThumbnail(
 					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
 				)
@@ -116,6 +119,7 @@ bot.on('message', msg => {
 				.setDescription(
 					"`ric geil (nsfw)` \ngewoon geil\n\n `ric you've got that (NSFW)` \nook geil "
 				)
+				.setFooter('ricardo is epic chad')
 				.setThumbnail(
 					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
 				)
@@ -132,6 +136,7 @@ bot.on('message', msg => {
 				.setDescription(
 					'`ric update me origineel` \nkrijg updates van de originele versie\n\n `ric update me psp` \nkrijg psp updates\n\n`ric update me bot`\nkrijg updates van development van een epic bot\n\n`ric im a speedrunner`\nkrijg de speedrunner rol'
 				)
+				.setFooter('ricardo is epic chad')
 				.setThumbnail(
 					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
 				)
