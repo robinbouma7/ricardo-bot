@@ -697,7 +697,10 @@ bot.on('message', msg => {
 					hour12: false
 				}) +
 				'\ndag: ' +
-				msg.createdAt.toLocaleDateString() +
+				msg.createdAt.toLocaleDateString('nl-NL', {
+					timeZone: 'europe/amsterdam',
+					hour12: false
+				}) +
 				"\n"
 		 );
 		 
