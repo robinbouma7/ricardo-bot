@@ -74,12 +74,12 @@ bot.on('message', msg => {
 				msg.channel.send(helpEmbed2);
 			}
 		} else if (msg.content.toLowerCase() === 'ric help commands') {
-			if (msg.guild.id === '828944339564232704') {
+			
 			const helpEmbedc = new Discord.MessageEmbed()
 				.setAuthor('commands:')
 				.setColor('#0011ff')
 				.setDescription(
-					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry boy`\nping onze favoriete furry'
+					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE\n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry`\nping je favoriete furry (steen)'
 				)
 				.setFooter('ricardo is epic chad')
 				.setThumbnail(
@@ -87,21 +87,8 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedc);
-			}
-			else {
-				const helpEmbedc = new Discord.MessageEmbed()
-				.setAuthor('commands:')
-				.setColor('#0011ff')
-				.setDescription(
-					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE\n\n`ric kill me`\nricardo regelt het wel'
-				)
-				.setFooter('ricardo is epic chad')
-				.setThumbnail(
-					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
-				)
-				.setTimestamp();
-			msg.channel.send(helpEmbedc);
-			}
+			
+			
 		} else if (msg.content.toLowerCase() === 'ric help nsfw') {
 			if (msg.channel.nsfw || msg.author.id === '671705704985395251') {
 				msg.channel.send("nee.");
@@ -316,6 +303,25 @@ bot.on('message', msg => {
 			else {
 			bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nps. hopelijk werkt dit.`).catch(console.error);
 			msg.reply("command gerund, nu maar hopen dat hij aankomt.");	
+			}
+			
+		}
+
+		else if (msg.content.toLowerCase() === "ric roll" ) {
+			
+			//id steen: 671705704985395251
+			userid = msg.author.id;
+			/*bot.users.fetch('690504015489925181').then((user) => {
+				user.send("hoi furry, je heb deze dm gekregen omdat " + msg.author.username + " het command hiervoor heeft gebruikt in de server " + msg.guild.name + ".").catch(console.error);
+			});	*/	
+			if (bot.users.cache.get(`${userid}`) === undefined) {
+				console.log("error, rickroll undefined.\ngrote F.");
+				msg.reply("error. je heb misschien de bot geblocked");
+			}
+			else {
+			bot.users.cache.get(`${userid}`).send("we're no strangers to love\nYou know the rules and so do I\nA full commitment's what I'm thinking of\nYou wouldn't get this from any other guy\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nAnd if you ask me how I'm feeling\nDon't tell me you're too blind to see\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\n(Ooh, give you up)\n(Ooh, give you up)\nNever gonna give, never gonna give\n(Give you up)\nNever gonna give, never gonna give\n(Give you up)\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you").catch(console.error);
+			msg.reply("command gerund, kijk maar eens in de dm's.");	
+			console.log("rickroll verstuurd naar " + msg.member.displayName);
 			}
 			
 		}
