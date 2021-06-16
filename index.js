@@ -18,8 +18,6 @@ bot.on('ready', () => {
 	});
 });
 
-//id steen: 671705704985395251
-
 bot.on('message', msg => {
 
 	if (msg.author.bot) {
@@ -309,14 +307,20 @@ bot.on('message', msg => {
 		) {	
 			msg.channel.send('<@&847800674879144006>\n\nhoi <@671705704985395251>');
 		} 
-		else if (msg.content.toLowerCase() === "ric dm furry" || msg.content.toLowerCase() === "ric dm furry boy") {
+		else if (msg.content.toLowerCase() === "ric dm furry" || msg.content.toLowerCase() === "ric dm furry boy" ) {
 			
-			
-			bot.users.fetch('671705704985395251').then((user) => {
-				user.send("hoi furry, je heb deze dm gekregen omdat " + msg.author.username + " het command hiervoor heeft gebruikt.").catch(console.error);
-			});		
+			//id steen: 671705704985395251
+			/*bot.users.fetch('690504015489925181').then((user) => {
+				user.send("hoi furry, je heb deze dm gekregen omdat " + msg.author.username + " het command hiervoor heeft gebruikt in de server " + msg.guild.name + ".").catch(console.error);
+			});	*/	
+			if (bot.users.cache.get("671705704985395251") === undefined) {
+				console.log("error, hij is undefined");
+				msg.reply("error. F.\n\nwaarschijnlijk heeft hij hem nog steeds geblocked.");
+			}
+			else {
+			bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nps. hopelijk werkt dit.`).catch(console.error);
 			msg.reply("command gerund, nu maar hopen dat hij aankomt.");	
-
+			}
 			
 		}
 		else if (
