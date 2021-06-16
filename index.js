@@ -32,11 +32,7 @@ bot.on('message', msg => {
 
 	else {
 		let args = msg.content.slice(8).split(' ');
-		/*if (msg.content.toLowerCase() === 'ric ping') {
-      msg.reply('pong');
-      //msg.channel.send('pong');
-  
-    } */
+
 		if (msg.content.toLowerCase() === 'ric ping') {
 			msg.channel.send('Loading data').then(async msg => {
 				msg.delete();
@@ -97,7 +93,7 @@ bot.on('message', msg => {
 				.setAuthor('commands:')
 				.setColor('#0011ff')
 				.setDescription(
-					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric kill me`\nricardo regelt het wel'
+					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE\n\n`ric kill me`\nricardo regelt het wel'
 				)
 				.setFooter('ricardo is epic chad')
 				.setThumbnail(
@@ -269,7 +265,7 @@ bot.on('message', msg => {
 			console.log("nickname: " + msg.member.displayName);
 			msg.channel.send('Hi ' + msg.member.displayName + ".");
 		} 
-		else if (msg.content.includes(" chad ") || msg.content.includes(" chad.") || msg.content.includes(" chad,")) {
+		else if (msg.content.includes("chad") || msg.content.includes("Chad")) {
 			msg.reply("riep je mij? ik hoorde chad.")
 		} else if (
 			msg.content.toLowerCase() === 'chad' ||
@@ -322,6 +318,15 @@ bot.on('message', msg => {
 			msg.reply("command gerund, nu maar hopen dat hij aankomt.");	
 			}
 			
+		}
+		
+		else if (msg.content.toLowerCase() === "ric baguette") {
+			const breadfront = bot.emojis.cache.get('854650231157162015');
+			const breadmid = bot.emojis.cache.get('854650155328471060');
+			const breadend = bot.emojis.cache.get('854650191876587520');
+
+			msg.channel.send(` ${breadfront} ${breadmid} ${breadmid} ${breadmid} ${breadmid} ${breadend}`);
+			msg.channel.send("BAGUETTE");
 		}
 		else if (
 			msg.content.toLowerCase() === 'geil' ||
