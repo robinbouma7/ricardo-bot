@@ -46,7 +46,7 @@ bot.on('message', msg => {
 		} else if (msg.content.toLowerCase() === 'ric help') {
 			if (msg.guild.id === '816263795613761597') {
 				//doolhof, de game! en shrek server 
-					const helpEmbed = new Discord.MessageEmbed()
+				const helpEmbed = new Discord.MessageEmbed()
 					.setAuthor('commands:')
 					.setColor('#0011ff')
 					.setDescription(
@@ -74,7 +74,7 @@ bot.on('message', msg => {
 				msg.channel.send(helpEmbed2);
 			}
 		} else if (msg.content.toLowerCase() === 'ric help commands') {
-			
+
 			const helpEmbedc = new Discord.MessageEmbed()
 				.setAuthor('commands:')
 				.setColor('#0011ff')
@@ -87,13 +87,10 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedc);
-			
-			
+
+
 		} else if (msg.content.toLowerCase() === 'ric help nsfw') {
-			if (msg.channel.nsfw || msg.author.id === '671705704985395251') {
-				msg.channel.send("nee.");
-			}
-			else {
+
 			const helpEmbedn = new Discord.MessageEmbed()
 				.setAuthor('commands:')
 				.setColor('#0011ff')
@@ -106,7 +103,7 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedn);
-			}
+
 		} else if (
 			msg.content.toLowerCase() === 'ric help roles' &&
 			msg.guild.id === '816263795613761597'
@@ -123,79 +120,41 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedr);
-		} 
-		/*word niet meer gebruikt omdat ik geen remote database kon vinden.
-		else if (msg.content.toLowerCase() === "ric leaderboard 1") {
-			var con = mysql.createConnection({
-  				host: "freedb.tech",
-				user: "freedbtech_robinbouma",
-				password: "Rbbo2005",
-				database: "freedbtech_doolhofdegame"
-			});
-			con.connect(function(err) {
-				if (err) throw err;
-				var sql = "SELECT naam, scorejs, mobiel FROM score1 ORDER BY scorejs DESC";
-				con.query(sql , function (err, result, fields) {
-					if (err) throw err;
-					console.log(result);
-					msg.channel.send("naam		score		mobiel");
-					//var numRows = result.length;
-					namen = "";
-					aantal = result.length;
-						//msg.channel.send(result[i].naam + "    " + result[i].scorejs + "    " + result[i].mobiel);
-						for (i = 0; i < result.length; i++) {
-							namen = namen + result[i].naam + "\n";
-						}
-						
-					
-					const l1Embedr = new Discord.MessageEmbed()
-					l1embedr.add_field(name="naam", value=namen, inline=True)
-					//embed.add_field(name="score", value="undefined", inline=True)
-					//embed.add_field(name="mobiel", value="undefined", inline=True)
-					msg.channel.send(l1Embedr);
-				});
-			});
-
-		}*/
+		}
+		
 		else if (msg.content.toLowerCase() === 'ric geil') {
-			if (msg.author.id === '671705704985395251') {
-					msg.channel.send("nee steen.");
-			}
-			else if (msg.channel.nsfw) {
+
+			if (msg.channel.nsfw) {
 				geil_rng = parseInt(Math.random() * 25);
 				console.log("geil rng: " + geil_rng);
 				console.log("");
 				if (geil_rng === 7) {
-						msg.channel.send("je moet niet altijd op mij geilen. \nvoor de verandering, geil eens op shrek:");
-						msg.channel.send("https://cdn.discordapp.com/attachments/833624751208660992/850686268928557076/image0.jpg");
+					msg.channel.send("je moet niet altijd op mij geilen. \nvoor de verandering, geil eens op shrek:");
+					msg.channel.send("https://cdn.discordapp.com/attachments/833624751208660992/850686268928557076/image0.jpg");
 				}
 				else {
 					msg.channel.send('https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp');
-				}					
+				}
 			} else {
-					msg.reply('dacht je nou echt dat je dit buiten een nsfw kanaal kan posten?');	
+				msg.reply('dacht je nou echt dat je dit buiten een nsfw kanaal kan posten?');
 			}
 		}
 		else if (msg.content.toLowerCase() === 'ric heil') {
 			console.log("HEIL ricardo!!!");
 			console.log("");
-			if (msg.author.id === '671705704985395251') {
-					msg.channel.send("nee steen.");
-			}
-			else if (msg.channel.nsfw) {
-				
-					msg.channel.send('je heb het verkeerd gespeld.\nmaar nog wel:\n\nHEIL ricardo!!!');
-									
+
+			if (msg.channel.nsfw) {
+
+				msg.channel.send('je heb het verkeerd gespeld.\nmaar nog wel:\n\nHEIL ricardo!!!');
+
 			} else {
-					msg.reply('dacht je nou echt dat je dit buiten een nsfw kanaal kan posten?');	
+				msg.reply('dacht je nou echt dat je dit buiten een nsfw kanaal kan posten?');
 			}
 		}
-			
+
 		else if (msg.content.toLowerCase() === 'ric geil pride' && month === 5) {
-			if (msg.author.id === '671705704985395251') {
-				msg.channel.send("nee steen");
-			}
-			else if (msg.channel.nsfw) {
+
+			if (msg.channel.nsfw) {
 				msg.channel.send(
 					'https://cdn.discordapp.com/attachments/833624751208660992/850017122377138215/pixil-frame-0_4.png'
 				);
@@ -206,10 +165,7 @@ bot.on('message', msg => {
 				msg.channel.send("https://cdn.discordapp.com/attachments/833624751208660992/850017122377138215/pixil-frame-0_4.png");
 			}
 		} else if (msg.content.toLowerCase() === "ric you've got that") {
-			if (msg.author.id === '671705704985395251') {
-				msg.channel.send("nee steen");
-			}
-			else if (msg.channel.nsfw) {
+			if (msg.channel.nsfw) {
 				msg.channel.send(
 					'https://tenor.com/view/flick-esfand-esfandtv-ricardo-milos-ricardo-flick-gif-13730968'
 				);
@@ -234,13 +190,74 @@ bot.on('message', msg => {
 			msg.channel.send(
 				'hier is mijn code:\nhttps://replit.com/@RobinBouma/ricardo-bot#index.js'
 			);
-		}else if (msg.content.toLowerCase() === 'ric subreddit' || msg.content.toLowerCase() === 'ric reddit') {
+		} else if (msg.content.toLowerCase() === 'ric subreddit' || msg.content.toLowerCase() === 'ric reddit') {
 			msg.channel.send(
 				'join de subreddit: https://www.reddit.com/r/Doolhofdegame/'
 			);
 		} else if (msg.content.toLowerCase() === 'ric invite') {
 			msg.channel.send('join deze epic server: https://discord.gg/JWz2u3Sauu');
-		} else if (
+		}
+
+		else if (msg.content.startsWith("ric join") || msg.content.startsWith('Ric join')) {
+			if (msg.author.id === "690504015489925181" || msg.author.id === "291547913019195392") {
+
+
+				let bericht = msg.content.slice(9).split(' ');
+				if (bericht.length > 0) {
+
+					let vc = bericht.join(' ');
+					console.log("\nverbinden met vc met het id: " + vc);
+					const channel = bot.channels.cache.get(`${vc}`);
+
+					if (!channel) {
+						msg.reply("dat kanaal bestaat niet eens.");
+						return console.error("The channel does not exist!");
+
+					}
+
+					channel.join().then(connection => {
+						// Yay, it worked!
+						console.log(`Successfully connected to ${bot.channels.cache.get(vc).name}.`);
+						msg.reply("succesvol verbonden met: " + bot.channels.cache.get(vc).name);
+					}).catch(e => {
+
+						// Oh no, it errored! Let's log it to console :)
+						console.error(e);
+
+					});
+
+				}
+				else {
+					msg.reply('geen bericht verstuurd.');
+				}
+			}
+			else {
+				msg.reply("nee.");
+			}
+		}
+		else if (msg.content.toLowerCase() === "ric leave") {
+			if (msg.author.id === "690504015489925181" || msg.author.id === "291547913019195392") {
+
+
+				if (!msg.guild.me.voice.channel) return msg.channel.send("I'm not in a voice channel you twat!");
+				msg.guild.me.voice.channel.leave(); //Leave the voice channel
+				//if (msg.guild.me.voiceChannel === undefined) {
+				//	msg.reply("i'm not in a vc you twat!");
+				//}
+				//else {
+				//msg.guild.me.voiceChannel.leave();
+
+				//msg.reply("I have successfully left the voice channel!");
+				//}
+				// check if the bot is connected to a voice channel
+			}
+			else {
+				msg.reply("nee.");
+			}
+
+
+		}
+		else if (
 			msg.content.toLowerCase() === 'epic chad' ||
 			msg.content.toLowerCase() === 'epic chad.'
 		) {
@@ -248,10 +265,10 @@ bot.on('message', msg => {
 		} else if (msg.content.toLowerCase() === 'hi ric' ||
 			msg.content.toLowerCase() === 'hi ric.'
 		) {
-			
+
 			console.log("nickname: " + msg.member.displayName);
 			msg.channel.send('Hi ' + msg.member.displayName + ".");
-		} 
+		}
 		else if (msg.content.includes("chad") || msg.content.includes("Chad")) {
 			msg.reply("riep je mij? ik hoorde chad.")
 		} else if (
@@ -287,45 +304,60 @@ bot.on('message', msg => {
 		} else if (
 			msg.content.toLowerCase() === 'ric furry' ||
 			msg.content.toLowerCase() === 'ric furry boy'
-		) {	
+		) {
 			msg.channel.send('<@&847800674879144006>\n\nhoi <@671705704985395251>');
-		} 
-		else if (msg.content.toLowerCase() === "ric dm furry" || msg.content.toLowerCase() === "ric dm furry boy" ) {
-			
-			//id steen: 671705704985395251
-			/*bot.users.fetch('690504015489925181').then((user) => {
-				user.send("hoi furry, je heb deze dm gekregen omdat " + msg.author.username + " het command hiervoor heeft gebruikt in de server " + msg.guild.name + ".").catch(console.error);
-			});	*/	
+		}
+		else if (msg.content.toLowerCase() === "ric dm furry" || msg.content.toLowerCase() === "ric dm furry boy") {
+
 			if (bot.users.cache.get("671705704985395251") === undefined) {
 				console.log("error, hij is undefined");
 				msg.reply("error. F.\n\nwaarschijnlijk heeft hij hem nog steeds geblocked.");
 			}
 			else {
-			bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nps. hopelijk werkt dit.`).catch(console.error);
-			msg.reply("command gerund, nu maar hopen dat hij aankomt.");	
+				bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nps. hopelijk werkt dit.`).catch(console.error);
+				msg.reply("command gerund, nu maar hopen dat hij aankomt.");
 			}
-			
+
 		}
 
-		else if (msg.content.toLowerCase() === "ric roll" ) {
-			
+		else if (msg.content.toLowerCase() === "ric roll") {
+
 			//id steen: 671705704985395251
 			userid = msg.author.id;
 			/*bot.users.fetch('690504015489925181').then((user) => {
 				user.send("hoi furry, je heb deze dm gekregen omdat " + msg.author.username + " het command hiervoor heeft gebruikt in de server " + msg.guild.name + ".").catch(console.error);
-			});	*/	
+			});	*/
 			if (bot.users.cache.get(`${userid}`) === undefined) {
 				console.log("error, rickroll undefined.\ngrote F.");
 				msg.reply("error. je heb misschien de bot geblocked");
 			}
 			else {
-			bot.users.cache.get(`${userid}`).send("we're no strangers to love\nYou know the rules and so do I\nA full commitment's what I'm thinking of\nYou wouldn't get this from any other guy\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nAnd if you ask me how I'm feeling\nDon't tell me you're too blind to see\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\n(Ooh, give you up)\n(Ooh, give you up)\nNever gonna give, never gonna give\n(Give you up)\nNever gonna give, never gonna give\n(Give you up)\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you").catch(console.error);
-			msg.reply("command gerund, kijk maar eens in de dm's.");	
-			console.log("rickroll verstuurd naar " + msg.member.displayName);
+				bot.users.cache.get(`${userid}`).send("we're no strangers to love\nYou know the rules and so do I\nA full commitment's what I'm thinking of\nYou wouldn't get this from any other guy\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nAnd if you ask me how I'm feeling\nDon't tell me you're too blind to see\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\n(Ooh, give you up)\n(Ooh, give you up)\nNever gonna give, never gonna give\n(Give you up)\nNever gonna give, never gonna give\n(Give you up)\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you").catch(console.error);
+				msg.reply("command gerund, kijk maar eens in de dm's.");
+				console.log("rickroll verstuurd naar " + msg.member.displayName);
 			}
-			
+
 		}
-		
+
+		else if (msg.content.startsWith('ric-rol') && (msg.author.id === "690504015489925181" || msg.author.id === "291547913019195392")) {
+			if (msg.mentions.users.size) {
+				const taggedUser = msg.mentions.users.first();
+				//taggedUser.id
+				if (bot.users.cache.get(`${taggedUser.id}`) === undefined) {
+					console.log("error, rickroll undefined.\ngrote F.");
+					msg.reply("error. je heb misschien de bot geblocked");
+				}
+				else {
+					bot.users.cache.get(`${taggedUser.id}`).send("we're no strangers to love\nYou know the rules and so do I\nA full commitment's what I'm thinking of\nYou wouldn't get this from any other guy\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nAnd if you ask me how I'm feeling\nDon't tell me you're too blind to see\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\n(Ooh, give you up)\n(Ooh, give you up)\nNever gonna give, never gonna give\n(Give you up)\nNever gonna give, never gonna give\n(Give you up)\n\nWe've known each other for so long\nYour heart's been aching, but\nYou're too shy to say it\nInside, we both know what's been going on\nWe know the game and we're gonna play it\n\nI just wanna tell you how I'm feeling\nGotta make you understand\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you").catch(console.error);
+					msg.reply("rickroll verstuurd, epic.");
+					console.log("rickroll verstuurd naar " + taggedUser.username);
+				}
+			}
+			else {
+				msg.reply('Please tag a valid user!');
+			}
+		}
+
 		else if (msg.content.toLowerCase() === "ric baguette") {
 			const breadfront = bot.emojis.cache.get('854650231157162015');
 			const breadmid = bot.emojis.cache.get('854650155328471060');
@@ -338,15 +370,10 @@ bot.on('message', msg => {
 			msg.content.toLowerCase() === 'geil' ||
 			msg.content.toLowerCase() === 'geil.'
 		) {
-			if (msg.author.id === '671705704985395251') {
-				msg.channel.send("nee steen, go to horny jail.");
-			}
-			else if (msg.author.bot) {
-			} else {
-				msg.channel.send(
-					'heb je het over mij? waarschijnlijk wel. iedereen vind mij geil.'
-				);
-			}
+			msg.channel.send(
+				'heb je het over mij? waarschijnlijk wel. iedereen vind mij geil.'
+			);
+
 		} else if (msg.content.toLowerCase() === 'f') {
 			if (msg.author.bot) {
 			} else {
@@ -473,7 +500,7 @@ bot.on('message', msg => {
 			);
 		}
 		else if (msg.content.toLowerCase() === 'ric what can you do' && msg.author.id === "690504015489925181") {
-			
+
 			msg.reply(
 				'mijn permissies op deze server zijn versturd naar de console.'
 			);
@@ -610,7 +637,7 @@ bot.on('message', msg => {
 				//niks
 			}
 		}
-		 else if (
+		else if (
 			msg.content.startsWith('ric rol') || msg.content.startsWith('Ric rol') && msg.author.id === "690504015489925181") {
 			if (args.length > 0) {
 				let roleName = args.join(' ');
@@ -618,24 +645,24 @@ bot.on('message', msg => {
 				if (!role) {
 					// Role doesn't exist, safe to create
 					msg.guild.roles.create({
-				data: {
-					name: args.join(' '),
-					color: 'BLUE',
-				},
-				reason: 'would be funny',
-				})
-				.then(console.log("rol toegevoegd, naam: " + args.join(' ')))
-				.catch(console.error);
+						data: {
+							name: args.join(' '),
+							color: 'BLUE',
+						},
+						reason: 'would be funny',
+					})
+						.then(console.log("rol toegevoegd, naam: " + args.join(' ')))
+						.catch(console.error);
 				} else {
 					// Role exists
 					msg.channel.send("rol bestaat al.");
 					console.log("rol bestaat al: " + roleName)
 				}
-				
-			} 
+
+			}
 			else {
-				msg.reply('geen bericht verstuurd.');	
-			} 
+				msg.reply('geen bericht verstuurd.');
+			}
 		}
 		else if (
 			msg.content.startsWith('ric say') ||
@@ -648,9 +675,9 @@ bot.on('message', msg => {
 				else {
 					msg.channel.send(args.join(' '));
 				}
-				
+
 			}
-			else { 
+			else {
 				msg.reply('probeer het nu nog eens en verstuur dan wel een bericht.');
 			}
 		} else if (msg.content.toLowerCase() == 'ric uptime') {
@@ -660,12 +687,12 @@ bot.on('message', msg => {
 		} else {
 			rng = parseInt(Math.random() * 500);
 			console.log('');
-			console.log('message was not a command.\ncontent of the message is:\n\n' + msg.content + 
-			'\n\nricroll is bij 69.\nde rng bij dit bericht is: ' +
-			rng);
-			
+			console.log('message was not a command.\ncontent of the message is:\n\n' + msg.content +
+				'\n\nricroll is bij 69.\nde rng bij dit bericht is: ' +
+				rng);
+
 			//allemaal info over bijna elk bricht printen naar console. gewoon omdat het kan.
-			
+
 			//comment want 1 rickroll is genoeg en deze is best slecht.
 			/*if (rng === 369) {
 				if (msg.author.bot || msg.channel.name === 'announcements') {
@@ -701,29 +728,29 @@ bot.on('message', msg => {
 		}
 		console.log("");
 		console.log(
-				'channel: ' +
-				msg.channel.name +
-				'\nserver: ' +
-				msg.guild.name +
-				'\nbot: ' +
-				msg.author.bot +
-				'\nverstuurd door: ' +
-				msg.author.username +
-				"\nnickname is: " +
-				msg.member.displayName +
-				'\ntijd: ' +
-				msg.createdAt.toLocaleTimeString('nl-NL', {
-					timeZone: 'europe/amsterdam',
-					hour12: false
-				}) +
-				'\ndag: ' +
-				msg.createdAt.toLocaleDateString('nl-NL', {
-					timeZone: 'europe/amsterdam',
-					hour12: false
-				}) +
-				"\n"
-		 );
-		 
+			'channel: ' +
+			msg.channel.name +
+			'\nserver: ' +
+			msg.guild.name +
+			'\nbot: ' +
+			msg.author.bot +
+			'\nverstuurd door: ' +
+			msg.author.username +
+			"\nnickname is: " +
+			msg.member.displayName +
+			'\ntijd: ' +
+			msg.createdAt.toLocaleTimeString('nl-NL', {
+				timeZone: 'europe/amsterdam',
+				hour12: false
+			}) +
+			'\ndag: ' +
+			msg.createdAt.toLocaleDateString('nl-NL', {
+				timeZone: 'europe/amsterdam',
+				hour12: false
+			}) +
+			"\n"
+		);
+
 
 		/*else if (msg.content.startsWith('!kick')) {
     if (msg.mentions.users.size) {
