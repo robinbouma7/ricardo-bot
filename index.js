@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = process.env['token'];
 //var mysql = require('mysql');
 var date = new Date();
 var month = date.getMonth();
 
-bot.login(token);
+bot.login(process.env['token']);
 
 bot.on('ready', () => {
 	console.info(`Logged in as ${bot.user.tag}!`);
@@ -79,7 +78,7 @@ bot.on('message', msg => {
 				.setAuthor('commands:')
 				.setColor('#0011ff')
 				.setDescription(
-					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE\n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry`\nping je favoriete furry (steen)'
+					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`hi ric`\ngroet de chad\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE \n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry`\nping je favoriete furry (steen)'
 				)
 				.setFooter('ricardo is epic chad')
 				.setThumbnail(
