@@ -307,14 +307,15 @@ bot.on('message', msg => {
 			msg.channel.send('<@&847800674879144006>\n\nhoi <@671705704985395251>');
 		}
 		else if (msg.content.toLowerCase() === "ric dm furry" || msg.content.toLowerCase() === "ric dm furry boy") {
-
+			
 			if (bot.users.cache.get("671705704985395251") === undefined) {
 				console.log("error, hij is undefined");
-				msg.reply("error. F.\n\nwaarschijnlijk heeft hij hem nog steeds geblocked.");
+				msg.reply("error. F.\nwaarde is undefined.\n\nals je hierover wil klagen moet je <@!690504015489925181> hebben");
 			}
 			else {
-				bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nps. hopelijk werkt dit.`).catch(console.error);
-				msg.reply("command gerund, nu maar hopen dat hij aankomt.");
+				bot.users.cache.get("671705704985395251").send(`hoi furry, je heb deze dm gekregen omdat ${msg.author.username} het command hiervoor heeft gebruikt in de server ${msg.guild.name}.\n\nveel plezier ermee!`).catch(console.error);
+				msg.reply("dm verstuurd, noice.");
+				console.log("dm succesvol verstuur naar furry.");
 			}
 
 		}
