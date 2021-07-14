@@ -685,7 +685,7 @@ bot.on('message', msg => {
 				'hier han je dat zien: https://stats.uptimerobot.com/50lLQI07jv/788037513'
 			);
 		} else {
-			rng = parseInt(Math.random() * 500);
+			rng = parseInt(Math.random() * 1000);
 			console.log('');
 			console.log('message was not a command.\ncontent of the message is:\n\n' + msg.content +
 				'\n\nricroll is bij 69.\nde rng bij dit bericht is: ' +
