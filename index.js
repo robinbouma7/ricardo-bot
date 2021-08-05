@@ -43,13 +43,13 @@ bot.on('message', msg => {
 				);
 			});
 		} else if (msg.content.toLowerCase() === 'ric help') {
-			if (msg.guild.id === '816263795613761597') {
-				//doolhof, de game! en shrek server 
+			if (msg.guild.id === '816263795613761597' || msg.guild.id === "865909031460405259") {
+				//doolhof, de game! + witch game server 
 				const helpEmbed = new Discord.MessageEmbed()
 					.setAuthor('commands:')
 					.setColor('#0011ff')
 					.setDescription(
-						'`ric help commands`\nvoor epic commands\n\n`ric help nsfw`\nvoor de geilste commands\n\n`rc help roles`\nvoor epic rollen'
+						'`ric help commands`\nvoor epic commands\n\n`ric help nsfw`\nvoor de geilste commands\n\n`ric help roles`\nvoor epic rollen'
 					)
 					.setFooter('ricardo is epic chad')
 					.setThumbnail(
@@ -73,12 +73,12 @@ bot.on('message', msg => {
 				msg.channel.send(helpEmbed2);
 			}
 		} else if (msg.content.toLowerCase() === 'ric help commands') {
-
+			if (msg.guild.id === "828944339564232704") {
 			const helpEmbedc = new Discord.MessageEmbed()
 				.setAuthor('commands:')
 				.setColor('#0011ff')
 				.setDescription(
-					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`hi ric`\ngroet de chad\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric baguette`\nBAGUETTE \n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric furry`\nping je favoriete furry (steen)'
+					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`hi ric`\ngroet de chad\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric screensaver`\ndownload de epic ricardo screensaver!\n\n`ric baguette`\nBAGUETTE \n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric-collect`\nkrijg info over een epic spel!\n\n`ric furry`\nping je favoriete furry (steen)\n\n`ric dm furry`\ndm je favoriete furry (steen)'
 				)
 				.setFooter('ricardo is epic chad')
 				.setThumbnail(
@@ -86,7 +86,21 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedc);
-
+			}
+			else {
+				const helpEmbedc = new Discord.MessageEmbed()
+				.setAuthor('commands:')
+				.setColor('#0011ff')
+				.setDescription(
+					'`ric ping`\nkrijg de reactie tijden van ricardo.\n\n`hi ric`\ngroet de chad\n\n`ric source web` \nsource code van de web versie\n\n `ric source psp` \n source code van de psp versie\n\n`ric source you`\nkrijg de code van ricardo zelf!\n\n`ric wiki psp` \nwiki van de psp versie\n\n`ric subreddit`\nsubreddit voor epic spel\n\n`ric invite` \ninvite voor epic server\n\n`ric game to play`\nricardo kiest een spel voor je uit.\n\n`ric hoe hoog ben ik`\naltijd handig om te weten\n\n`ric screensaver`\ndownload de epic ricardo screensaver!\n\n`ric baguette`\nBAGUETTE \n\n`ric roll`\nric will never give you up\n\n`ric kill me`\nricardo regelt het wel\n\n`ric-collect`\nkrijg info over een epic spel!'
+				)
+				.setFooter('ricardo is epic chad')
+				.setThumbnail(
+					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
+				)
+				.setTimestamp();
+			msg.channel.send(helpEmbedc);
+			}
 
 		} else if (msg.content.toLowerCase() === 'ric help nsfw') {
 
@@ -104,9 +118,24 @@ bot.on('message', msg => {
 			msg.channel.send(helpEmbedn);
 
 		} else if (
-			msg.content.toLowerCase() === 'ric help roles' &&
-			msg.guild.id === '816263795613761597'
-		) {
+			msg.content.toLowerCase() === 'ric help roles') {
+			if (msg.guild.id === "865909031460405259") {
+				//witch game server
+				const helpEmbedr = new Discord.MessageEmbed()
+				.setAuthor('commands:')
+				.setColor('#0011ff')
+				.setDescription(
+					'`ric me want tester`\nkrijg de tester rol'
+				)
+				.setFooter('ricardo is epic chad')
+				.setThumbnail(
+					'https://cdn.discordapp.com/avatars/833605715771654174/56529ef670666520dcbf70e7a6e4b5ad.webp'
+				)
+				.setTimestamp();
+			msg.channel.send(helpEmbedr);
+			}
+			else if (msg.guild.id === '816263795613761597') {
+				//doolhof de game! server
 			const helpEmbedr = new Discord.MessageEmbed()
 				.setAuthor('commands:')
 				.setColor('#0011ff')
@@ -119,6 +148,7 @@ bot.on('message', msg => {
 				)
 				.setTimestamp();
 			msg.channel.send(helpEmbedr);
+			}
 		}
 		
 		else if (msg.content.toLowerCase() === 'ric geil') {
@@ -274,7 +304,7 @@ bot.on('message', msg => {
 			msg.content.toLowerCase() === 'chad' ||
 			msg.content.toLowerCase() === 'chad.'
 		) {
-			msg.channel.send('riep je me?');
+			msg.reply('riep je me?');
 		} else if (
 			msg.content.toLowerCase() === 'yes' ||
 			msg.content.toLowerCase() === 'yes.'
@@ -399,7 +429,17 @@ bot.on('message', msg => {
 			msg.channel.send(
 				'dit is wel een leuk spel: https://www.doolhofdegame.ml/index.php'
 			);
-		} else if (
+		} else if (msg.content.toLowerCase() === 'ric screensaver') {
+			msg.channel.send(
+				'Download de epic ricardo screensaver hier:\n https://robinbouma.itch.io/ricardo-screensaver\n\nhij is voor windows en android!!'
+			);
+		}
+		else if (msg.content.toLowerCase() === 'ric-collect' ||
+		msg.content.toLowerCase() === 'ric re-collect') {
+			msg.channel.send(
+				'epic spel gemaakt door <@690504015489925181> en <@703691110261981335>.\n\nmeer info? join de discord server: https://discord.gg/FcSEkEF78n'
+			);
+		}  else if (
 			msg.content.toLowerCase() === 'ric hoe hoog ben ik' ||
 			msg.content.toLowerCase() === 'ric hoe hoog ben ik?'
 		) {
@@ -413,7 +453,7 @@ bot.on('message', msg => {
 				msg.channel.send("nee steen, te eng voor jou.");
 			}
 			else {
-				kill_rng = parseInt(Math.random() * 13 + 1);
+				kill_rng = parseInt(Math.random() * 14 + 1);
 				console.log('');
 				console.log(`kill rng: ` + kill_rng);
 				if (kill_rng === 1) {
@@ -470,6 +510,13 @@ bot.on('message', msg => {
 				}
 				if (kill_rng === 13) {
 					msg.channel.send("https://tenor.com/view/ricardo-milos-gun-aim-gif-15682110");
+				}
+				if (kill_rng === 14) {
+					msg.channel.send("", {
+						files: [
+							'https://cdn.discordapp.com/attachments/821350604680200213/864201902517911583/video0.mp4'
+						]
+					});
 				}
 			}
 		} else if (
@@ -632,6 +679,34 @@ bot.on('message', msg => {
 					);
 					console.log('');
 					console.log(`speedrunner rol toegevoegd aan: ` + msg.author.username);
+				}
+			} else {
+				//niks
+			}
+		}
+		else if (
+			msg.content.toLowerCase() === 'ric me want tester' ||
+			msg.content.toLowerCase() === "ric me want test"
+		) {
+			if (msg.guild.id === '865909031460405259') {
+				let speedrunner = msg.guild.roles.cache.get('866031485123166249');
+
+				if (msg.member.roles.cache.has('866031485123166249')) {
+					let member = msg.member;
+					member.roles.remove(speedrunner).catch(console.error);
+					msg.reply(
+						'you not test now'
+					);
+					console.log('');
+					console.log(`tester rol weggenomen van: ` + msg.author.username);
+				} else {
+					let member = msg.member;
+					member.roles.add(speedrunner).catch(console.error);
+					msg.reply(
+						'you test now.'
+					);
+					console.log('');
+					console.log(`tester rol toegevoegd aan: ` + msg.author.username);
 				}
 			} else {
 				//niks
