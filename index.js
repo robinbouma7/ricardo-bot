@@ -2,7 +2,11 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 //var mysql = require('mysql');
 var date = new Date();
+var moment = require("moment");
 var month = date.getMonth();
+var blockeduser;
+var blockedsince = new Date();
+var timenow;
 
 bot.login(process.env['token']);
 
@@ -17,8 +21,45 @@ bot.on('ready', () => {
 	});
 });
 
-bot.on('message', msg => {
+bot.on('messageUpdate', (oldmsg, newmsg) => {
+	console.log("message edited by ", newmsg.author.username, "in the channel ", newmsg.channel.name);
+   if (newmsg.channel.name == "ja") {
+			console.log("channel name is ja.");
 
+			if (newmsg.content.includes("Nee") || newmsg.content.includes("nee") || newmsg.content.includes("nEE") || newmsg.content.includes("nEe") || newmsg.content.includes("neE") || newmsg.content.includes("NEE")) {
+
+				blockeduser = newmsg.author.id;
+				blockedsince = new Date();
+				if (bot.users.cache.get(`${blockeduser}`) === undefined) {
+					console.log("error, hij is undefined");
+					//msg.reply("error. F.\nwaarde is undefined.\n\nals je hierover wil klagen moet je <@!690504015489925181> hebben");
+				}
+
+				else {
+					bot.users.cache.get(blockeduser).send(`je heb nee gezegd in een ja chat, je kan over 300 seconden weer praten.`).catch(console.error);
+					console.log("mute bericht verstuurd");
+				}
+				console.log("member deleted with id ", blockeduser, "\n", newmsg.author.id);
+				newmsg.delete();
+
+			}
+			else if (!newmsg.content.includes("ja") && !newmsg.content.includes("JA") && !newmsg.content.includes("Ja")) {
+				newmsg.delete();
+				console.log("message without ja deleted");
+			}
+			
+		}
+});
+
+
+bot.on('message', msg => {
+	//let user = msg.author;
+	var timenow = new Date();
+	var secondsDiff = (timenow - blockedsince) / 1000;
+	console.log(timenow);
+	console.log(blockedsince);
+	console.log(secondsDiff);
+	console.log(blockeduser);
 	if (msg.author.bot) {
 
 	}
@@ -28,11 +69,48 @@ bot.on('message', msg => {
 		console.log("dm bericht gekregen van: " + msg.author.username + "\nbericht is: " + msg.content);
 
 	}
+	else if (msg.author.id === blockeduser && secondsDiff < 300) {
+		
+		if (bot.users.cache.get(blockeduser) === undefined) {
+			console.log("error, hij is undefined");
+			//msg.reply("error. F.\nwaarde is undefined.\n\nals je hierover wil klagen moet je <@!690504015489925181> hebben");
+		}
+		else {
+			bot.users.cache.get(blockeduser).send(`je kan nu geen berichten versturen omdat je nee heb gezegd, je kan over ${(300 - secondsDiff).toFixed(0)} seconden weer praten.`).catch(console.error);
+			console.log("mute bericht verstuurd");
+		}
+		msg.delete();
+	}
 
 	else {
 		let args = msg.content.slice(8).split(' ');
+		if (msg.channel.name == "ja") {
+			console.log("channel name is ja.");
 
-		if (msg.content.toLowerCase() === 'ric ping') {
+			if (msg.content.includes("Nee") || msg.content.includes("nee") || msg.content.includes("nEE") || msg.content.includes("nEe") || msg.content.includes("neE") || msg.content.includes("NEE")) {
+
+				blockeduser = msg.author.id;
+				blockedsince = new Date();
+				if (bot.users.cache.get(`${blockeduser}`) === undefined) {
+					console.log("error, hij is undefined");
+					//msg.reply("error. F.\nwaarde is undefined.\n\nals je hierover wil klagen moet je <@!690504015489925181> hebben");
+				}
+
+				else {
+					bot.users.cache.get(blockeduser).send(`je heb nee gezegd in een ja chat, je kan over 300 seconden weer praten.`).catch(console.error);
+					console.log("mute bericht verstuurd");
+				}
+				console.log("member deleted with id ", blockeduser, "\n", msg.author.username);
+				msg.delete();
+
+			}
+			else if (!msg.content.includes("ja") && !msg.content.includes("JA") && !msg.content.includes("Ja")) {
+				msg.delete();
+				console.log("message without ja deleted");
+			}
+			
+		}
+		else if (msg.content.toLowerCase() === 'ric ping') {
 			msg.channel.send('Loading data').then(async msg => {
 				msg.delete();
 				msg.channel.send(
@@ -431,7 +509,7 @@ bot.on('message', msg => {
 			);
 		} else if (msg.content.toLowerCase() === 'ric screensaver') {
 			msg.channel.send(
-				'Download de epic ricardo screensaver hier:\n https://robinbouma.itch.io/ricardo-screensaver\n\nhij is voor windows en android!!'
+				'Download de epic ricardo screensaver hier:\n https://robinbouma.itch.io/ricardo-screensaver\n\nhij is voor windows, linux, android en psp!!'
 			);
 		}
 		else if (msg.content.toLowerCase() === 'ric-collect' ||
@@ -811,8 +889,6 @@ bot.on('message', msg => {
 			msg.author.bot +
 			'\nverstuurd door: ' +
 			msg.author.username +
-			"\nnickname is: " +
-			msg.member.displayName +
 			'\ntijd: ' +
 			msg.createdAt.toLocaleTimeString('nl-NL', {
 				timeZone: 'europe/amsterdam',
