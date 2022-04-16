@@ -13,6 +13,7 @@
     "discord.js": "^12.5.3",
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
-    "prompt-confirm": "^2.0.4"
+    "prompt-confirm": "^2.0.4",
+    "ytdl-core": "^4.9.1"
   }
 }
