@@ -9,7 +9,7 @@ var blockedsince = new Date();
 var timenow;
 var invc;
 
-bot.login(process.env['token']);
+bot.login(process.env.token);
 
 bot.on('ready', () => {
 	console.info(`Logged in as ${bot.user.tag}!`);
@@ -973,14 +973,3 @@ bot.on('message', msg => {
 	}
 	
 });
-
-
-
-const http = require('http');
-const server = http.createServer((req, res) => {
-	res.writeHead(200);
-	res.end(
-		'bot online\n\ninvite link:\nhttps://discord.com/api/oauth2/authorize?client_id=833706458923008010&permissions=535633067857&scope=bot'
-	);
-});
-server.listen(300);
